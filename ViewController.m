@@ -86,7 +86,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = YES;
-}
+}//该页面的导航栏不再显示
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
