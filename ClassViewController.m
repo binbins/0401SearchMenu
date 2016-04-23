@@ -12,8 +12,7 @@
 #import "SecondClassViewController.h"
 
 @interface ClassViewController () <UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
-//layout里已经签过viewdelegate
-
+//这里可以填属性
 @end
 
 @implementation ClassViewController  {
@@ -64,7 +63,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
         
-        //错误的话弹出一个模态视图，要不然脱离工具之后怎么死的都不知道
+        //错误的话弹出一个模态视图，要不然脱离Xcode之后怎么死的都不知道
         //连接error的结构
         
     }];
