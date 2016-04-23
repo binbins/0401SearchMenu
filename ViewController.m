@@ -55,12 +55,19 @@
         
         //之前已经设置过返回格式，返回的直接是一个字典，而且已经转码了
         _dataDic = responseObject;
-        [_vc setValue:_dataDic forKey:@"resultDic"];
+        NSString *resultcode = _dataDic[@"resultcode"];
 
+        
+        if (![resultcode isEqualToString:@"202"]) {//不为空的时候才传
+            
+            [_vc setValue:_dataDic forKey:@"resultDic"];//给下一个控制器的属性传值
+        }
+      
         NSLog(@"请求成功");
         //现在才把字典传过了，但此时表示图已经加载好了，需要重新加载一下数据
         
-    //建立通知:先不用通知传值
+    //建立通知:先不用通知传值,只是用通知触发重新加载的事件
+        //安全判断：没有找到结果的情况
         NSNotification *notification = [NSNotification notificationWithName:@"dataIsCome" object:nil userInfo:nil];
         [[NSNotificationCenter defaultCenter]postNotification:notification];
         

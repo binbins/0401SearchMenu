@@ -43,7 +43,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     NSDictionary *dic = [_resultDic objectForKey:@"result"];
+
+        
     _menuArr = dic[@"data"];
+
     return _menuArr.count;
 }
 
