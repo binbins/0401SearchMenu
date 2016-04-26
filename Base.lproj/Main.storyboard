@@ -283,17 +283,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sUS-Pj-H0c">
-                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                                 <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xHq-Qx-ia3">
                                     <size key="itemSize" width="100" height="60"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="150"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="classCell" id="KhT-ds-ZVf" customClass="ClassCell">
-                                        <rect key="frame" x="0.0" y="64" width="100" height="60"/>
+                                        <rect key="frame" x="0.0" y="234" width="100" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
@@ -308,6 +308,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="w2x-AF-Yh3" secondAttribute="bottom" id="0ld-Yz-zSX"/>
                                             <constraint firstItem="w2x-AF-Yh3" firstAttribute="leading" secondItem="KhT-ds-ZVf" secondAttribute="leading" id="68p-UJ-QG3"/>
@@ -319,6 +320,11 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headView" id="QJX-rS-d5I">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="150"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="eFZ-mb-g0U" id="Kcn-gl-Uey"/>
                                     <outlet property="delegate" destination="eFZ-mb-g0U" id="OV3-IL-ctt"/>
@@ -327,7 +333,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="sUS-Pj-H0c" firstAttribute="leading" secondItem="Unw-Qt-YT2" secondAttribute="leading" id="S66-HV-TCM"/>
-                            <constraint firstItem="sUS-Pj-H0c" firstAttribute="top" secondItem="X2e-Td-PvH" secondAttribute="bottom" id="TEz-Oq-dSW"/>
+                            <constraint firstItem="sUS-Pj-H0c" firstAttribute="top" secondItem="X2e-Td-PvH" secondAttribute="bottom" constant="-64" id="TEz-Oq-dSW"/>
                             <constraint firstAttribute="trailing" secondItem="sUS-Pj-H0c" secondAttribute="trailing" id="hfD-h2-T1f"/>
                             <constraint firstItem="XLe-ty-F1N" firstAttribute="top" secondItem="sUS-Pj-H0c" secondAttribute="bottom" id="wRz-4z-onU"/>
                         </constraints>
@@ -356,17 +362,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yRD-RS-hX6">
-                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bsx-P5-W22">
                                     <size key="itemSize" width="112" height="68"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="150"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="secondClass" id="mqv-8b-esb" customClass="SecondClassCell">
-                                        <rect key="frame" x="0.0" y="64" width="112" height="68"/>
+                                        <rect key="frame" x="0.0" y="234" width="112" height="68"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="112" height="68"/>
@@ -381,6 +387,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="f9Y-bE-1xd" secondAttribute="trailing" id="2Cz-dm-i5n"/>
                                             <constraint firstAttribute="bottom" secondItem="f9Y-bE-1xd" secondAttribute="bottom" id="Eip-id-XxQ"/>
@@ -392,6 +399,11 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headViewB" id="rUL-pE-k2x">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="150"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="71S-Tm-WCx" id="UEl-KU-GiI"/>
                                     <outlet property="delegate" destination="71S-Tm-WCx" id="3Ex-V0-EgL"/>
@@ -401,7 +413,7 @@
                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="MGt-EK-DLb" firstAttribute="top" secondItem="yRD-RS-hX6" secondAttribute="bottom" id="2Bu-da-Y3a"/>
-                            <constraint firstItem="yRD-RS-hX6" firstAttribute="top" secondItem="mGe-zX-HIH" secondAttribute="bottom" id="EtJ-Dn-jLd"/>
+                            <constraint firstItem="yRD-RS-hX6" firstAttribute="top" secondItem="mGe-zX-HIH" secondAttribute="bottom" constant="-64" id="EtJ-Dn-jLd"/>
                             <constraint firstAttribute="trailing" secondItem="yRD-RS-hX6" secondAttribute="trailing" id="ONe-r2-CCy"/>
                             <constraint firstItem="yRD-RS-hX6" firstAttribute="leading" secondItem="xja-ks-Sye" secondAttribute="leading" id="a8O-yV-O2t"/>
                         </constraints>

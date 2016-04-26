@@ -109,7 +109,7 @@
 - (void)creatPostView { //创建三个标签
 
     _postView = [[UIView alloc]initWithFrame:self.view.frame];
-    _postView.backgroundColor = [UIColor colorWithRed:0.96 green:0.36 blue:0.31 alpha:1];
+    _postView.backgroundColor = [UIColor whiteColor];
     
     [self creatScroll];
 //标题
@@ -118,7 +118,7 @@
     _titleLabel.font = [UIFont systemFontOfSize:20];
     [_postView addSubview:_titleLabel];
 //tags
-    _tagsLabel = [[UILabel alloc]initWithFrame:CGRectMake(30, 110, KCS_W - 60, 50)];
+    _tagsLabel = [[UILabel alloc]initWithFrame:CGRectMake(30, 110, KCS_W - 60, 80)];
     [_postView addSubview:_tagsLabel];
     _tagsLabel.numberOfLines = 0;
 //材料

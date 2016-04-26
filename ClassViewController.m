@@ -22,6 +22,7 @@
     NSArray *_dataArr;
     NSMutableArray *_listArr;
     ClassCell *_currentCell;
+    UIImageView *_headImg;
 }
 
 - (void)viewDidLoad {
@@ -33,7 +34,7 @@
 //从故事板上来的collectionView不用再去注册
 
     //稍后注册头视图
-    
+//    [_collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headView"]; 
 }
 
 
@@ -110,11 +111,25 @@
     return _dataArr.count;
 }
 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+
+    //从story里拿到的，不用代码创建
+    UICollectionReusableView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headView" forIndexPath:indexPath];
+
+    headView.clipsToBounds = NO;
+    _headImg = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, KCS_W, 150)];
+    _headImg.image = [UIImage imageNamed:@"home_center"];
+    
+    [headView addSubview:_headImg];
+    
+    return headView;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     ClassCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"classCell" forIndexPath:indexPath];
     if (cell) {
-        //好像不需要这个
+        //不需要这个
     }
     ClassModel *model = _listArr[indexPath.row];
     cell.model = model;
@@ -134,6 +149,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+//滑动视图的代理方法：前提是签订协议，这里呢已经在故事板里签过了
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+
+    //因为起初偏移了64
+    float offsetY = scrollView.contentOffset.y +64;//因为导航栏等原因，加个64计算方便看
+    if (offsetY < 0) {
+    //        NSLog(@"%.2f",offsetY);
+        _headImg.frame = CGRectMake(0, offsetY, KCS_W, 150 - offsetY);
+    }
+}
+
 
 
 //弹出之前的准备
@@ -141,7 +167,7 @@
     
     //要是有多个推出视图就得判断一下identifer
     SecondClassViewController *vc = (SecondClassViewController *)segue.destinationViewController;
-    [vc setValue:_currentCell.model forKey:@"passmodel"];
+    [vc setValue:_currentCell.model forKey:@"passmodel"];//看着高大上，其实相当于VC.passmodel = ~~
     
     _currentCell = nil;//用完后置空
     // Get the new view controller using [segue destinationViewController].

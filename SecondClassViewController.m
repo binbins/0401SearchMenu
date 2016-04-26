@@ -19,6 +19,7 @@
 
     NSMutableArray *_models;
     ResultListVC *_vc;
+    UIImageView *_headImgView;
  
 }
 
@@ -78,8 +79,24 @@
     _vc.title = model.name; //在这里定好结果列表的名字
     [self.navigationController pushViewController:_vc animated:YES];
     
+}
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+
+    UICollectionReusableView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headViewB" forIndexPath:indexPath];
+    headView.clipsToBounds = NO;
+    _headImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, KCS_W, 150)];
+    _headImgView.image = [UIImage imageNamed:@"home_center"];
+    [headView addSubview:_headImgView];
     
-    
+    return headView;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+
+    float offsetY = scrollView.contentOffset.y + 64;
+    if (offsetY < 0 ) {
+        _headImgView.frame = CGRectMake(0, offsetY, KCS_W, 150-offsetY);
+    }
 }
 
 - (void)postRequestWithModel:(SecondModel *)model {
