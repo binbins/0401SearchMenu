@@ -72,7 +72,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="_searchKey" destination="85b-NL-9Uj" id="U8C-gp-avP"/>
-                        <segue destination="Wun-A1-8X9" kind="push" identifier="search" id="6eh-RQ-swe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -120,7 +119,7 @@
         <!--搜索结果-->
         <scene sceneID="bOL-KU-bsp">
             <objects>
-                <viewController id="Wun-A1-8X9" customClass="ResultListVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="resultList" id="Wun-A1-8X9" customClass="ResultListVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fut-7I-yB4"/>
                         <viewControllerLayoutGuide type="bottom" id="18U-3l-a3h"/>
@@ -130,11 +129,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wec-Ld-vqA">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="-44" width="320" height="573"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="list" rowHeight="111" id="0fH-et-22l">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="111"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0fH-et-22l" id="INj-Vr-f0E">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="110"/>
@@ -189,9 +188,6 @@
                                                 <constraint firstItem="SbI-kV-UcA" firstAttribute="top" secondItem="INj-Vr-f0E" secondAttribute="top" constant="15" id="vFU-pQ-uDm"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="GD2-eR-zww" kind="push" identifier="pushstep" id="bqv-e6-vYP"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -200,9 +196,9 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="18U-3l-a3h" firstAttribute="top" secondItem="Wec-Ld-vqA" secondAttribute="bottom" id="I5Y-Hy-NjX"/>
+                            <constraint firstItem="18U-3l-a3h" firstAttribute="top" secondItem="Wec-Ld-vqA" secondAttribute="bottom" constant="-49" id="I5Y-Hy-NjX"/>
                             <constraint firstItem="Wec-Ld-vqA" firstAttribute="leading" secondItem="pTV-sU-9i0" secondAttribute="leading" id="Vuu-Ek-8Ev"/>
                             <constraint firstItem="Wec-Ld-vqA" firstAttribute="top" secondItem="fut-7I-yB4" secondAttribute="bottom" constant="-64" id="Ygj-gC-Boc"/>
                             <constraint firstAttribute="trailing" secondItem="Wec-Ld-vqA" secondAttribute="trailing" id="xor-xk-VyL"/>
@@ -216,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Z1-IE-yDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="441" y="489"/>
+            <point key="canvasLocation" x="559" y="330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w1Q-6i-imh">
@@ -329,7 +325,6 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="sUS-Pj-H0c" firstAttribute="leading" secondItem="Unw-Qt-YT2" secondAttribute="leading" id="S66-HV-TCM"/>
                             <constraint firstItem="sUS-Pj-H0c" firstAttribute="top" secondItem="X2e-Td-PvH" secondAttribute="bottom" id="TEz-Oq-dSW"/>
@@ -421,7 +416,7 @@
         <!--步骤说明-->
         <scene sceneID="YVx-yx-5AB">
             <objects>
-                <viewController id="GD2-eR-zww" customClass="ShowStepVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="resultStep" id="GD2-eR-zww" customClass="ShowStepVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hJc-7M-mYh"/>
                         <viewControllerLayoutGuide type="bottom" id="ZjY-af-Lri"/>
@@ -431,11 +426,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="340" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h5T-Kg-SOG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="529"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stepCell" rowHeight="340" id="BSz-bP-3oT" customClass="StepCell">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="340"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="340"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BSz-bP-3oT" id="gPA-yB-RlC">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="339"/>
@@ -478,7 +473,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZjY-af-Lri" firstAttribute="top" secondItem="h5T-Kg-SOG" secondAttribute="bottom" id="H9m-e0-6gP"/>
+                            <constraint firstItem="ZjY-af-Lri" firstAttribute="top" secondItem="h5T-Kg-SOG" secondAttribute="bottom" constant="-49" id="H9m-e0-6gP"/>
                             <constraint firstItem="h5T-Kg-SOG" firstAttribute="top" secondItem="WmP-nF-Sxs" secondAttribute="top" id="XOS-Ho-hL2"/>
                             <constraint firstAttribute="trailing" secondItem="h5T-Kg-SOG" secondAttribute="trailing" id="rZE-p6-6JV"/>
                             <constraint firstItem="h5T-Kg-SOG" firstAttribute="leading" secondItem="WmP-nF-Sxs" secondAttribute="leading" id="tYT-LF-jYC"/>
@@ -492,7 +487,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OD-F8-LAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="823" y="476"/>
+            <point key="canvasLocation" x="937" y="330"/>
         </scene>
     </scenes>
     <resources>

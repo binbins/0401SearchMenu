@@ -26,11 +26,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self getdata:nil];
 }
 
 - (void)getdata:(NSNotification *)dic { //代码都在这里写，数据传入之后
 
-    _stepArr = dic.userInfo[@"steps"];
+//    _stepArr = dic.userInfo[@"steps"];
+    _stepArr = _sourceDic[@"steps"];
     
 
     [self creatScro];
@@ -95,6 +97,7 @@
 - (void)changeView {
 
     self.navigationController.navigationBarHidden = NO;
+    self.tabBarController.tabBar.hidden = NO;
 
     [UIView animateWithDuration:.3 animations:^{
         _table.alpha = 1;
@@ -104,7 +107,7 @@
 - (void)changeToScro {
 
     self.navigationController.navigationBarHidden = YES;
-    
+    self.tabBarController.tabBar.hidden = YES;
 
     [UIView animateWithDuration:.3 animations:^{
         _scroll.alpha = 1;
@@ -126,7 +129,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = NO;
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getdata:) name:@"stepArrIsComming" object:nil];
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getdata:) name:@"stepArrIsComming" object:nil];
 }
 
 

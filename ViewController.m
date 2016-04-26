@@ -30,7 +30,11 @@
 
 - (IBAction)searchKey:(UIButton *)sender {
     if (![_searchKey.text isEqualToString:@""]) {
-        [self performSegueWithIdentifier:@"search" sender:self];
+//        [self performSegueWithIdentifier:@"search" sender:self];
+        _vc = [self.storyboard instantiateViewControllerWithIdentifier:@"resultList"];
+        [self.navigationController pushViewController:_vc animated:YES];
+        
+        [self requestURL];  //含有的post方法是异步执行的，没法让他完全执行完再进行传值
     }
 }
 
@@ -79,7 +83,7 @@
 }
 
 
-
+//不用sugue，就不会执行下面的代理方法
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
     //只有一个sugue 不用判断了

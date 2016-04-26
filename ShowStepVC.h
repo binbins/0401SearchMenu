@@ -10,4 +10,5 @@
 
 @interface ShowStepVC : UIViewController
 
+@property NSDictionary *sourceDic;
 @end
